@@ -1,0 +1,33 @@
+:root { font: 15px/1.5 system-ui, sans-serif; color: #26303a; background: #f5f6f8; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 32px; max-width: 1400px; margin-inline: auto; }
+header, .panel-title, .toolbar, .input-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+header { margin-bottom: 28px; }
+h1, h2, p { margin: 0; }
+h1 { font-size: 28px; }
+h2 { font-size: 18px; }
+header p, .hint { color: #6c7782; }
+main { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.panel { background: white; border: 1px solid #dfe4e8; border-radius: 10px; padding: 20px; min-width: 0; }
+.panel-title span { color: #6c7782; font-size: 13px; }
+.hint { margin: 8px 0 18px; font-size: 13px; }
+.tree { min-height: 300px; max-height: 55vh; overflow: auto; border: 1px solid #e6e9ec; border-radius: 6px; padding: 8px; }
+.row { display: flex; align-items: center; gap: 4px; min-height: 34px; border-radius: 5px; padding-right: 8px; white-space: nowrap; }
+.row:hover { background: #f3f6fa; }
+.row.selected { background: #e6f0ff; }
+.row.deleted { color: #9aa2aa; text-decoration: line-through; }
+.toggle { width: 26px; border: 0; background: transparent; color: #596779; padding: 3px; }
+.label { border: 0; background: transparent; color: inherit; text-align: left; flex: 1; padding: 5px; cursor: pointer; }
+.badge { font-size: 11px; color: #a34b48; text-decoration: none; }
+button { border: 1px solid #2864bb; background: #2864bb; color: white; padding: 8px 12px; border-radius: 5px; cursor: pointer; font: inherit; white-space: nowrap; }
+button:disabled { opacity: .45; cursor: default; }
+button.secondary { color: #35485c; background: white; border-color: #c8d0d8; }
+button.danger { color: #b33d39; background: white; border-color: #dbb7b5; }
+.toolbar { border-top: 1px solid #e6e9ec; margin-top: 16px; padding-top: 16px; color: #6c7782; font-size: 13px; }
+.editor { border-top: 1px solid #e6e9ec; margin-top: 16px; padding-top: 16px; }
+.editor label { display: block; margin-bottom: 6px; font-weight: 600; }
+.input-row { margin-bottom: 12px; }
+input { min-width: 0; flex: 1; padding: 8px 10px; border: 1px solid #c8d0d8; border-radius: 5px; font: inherit; }
+#message { min-height: 28px; margin-top: 12px; color: #9b3532; }
+.empty { color: #8a949e; padding: 12px; }
+@media (max-width: 800px) { body { padding: 16px; } header { align-items: flex-start; } main { grid-template-columns: 1fr; } .tree { max-height: 45vh; } }

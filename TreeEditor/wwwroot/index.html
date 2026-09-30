@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tree editor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Tree editor</h1>
+      <p>Load elements from the database, make changes in the cache, then apply them together.</p>
+    </div>
+    <button id="reset" class="secondary">Reset sample data</button>
+  </header>
+  <main>
+    <section class="panel">
+      <div class="panel-title"><h2>DBTreeView</h2><span>Database</span></div>
+      <p class="hint">Expand a branch and select an element to load it into the cache.</p>
+      <div id="db-tree" class="tree"></div>
+      <div class="toolbar"><button id="load" disabled>Load selected element</button></div>
+    </section>
+    <section class="panel">
+      <div class="panel-title"><h2>CachedTreeView</h2><span>Local cache</span></div>
+      <p class="hint">Only loaded elements are shown. Indentation follows the nearest loaded ancestor.</p>
+      <div id="cache-tree" class="tree"></div>
+      <div id="editor" class="editor" hidden>
+        <label for="value">Value</label>
+        <div class="input-row"><input id="value" maxlength="200"><button id="save">Save edit</button></div>
+        <div class="input-row"><input id="child-value" maxlength="200" placeholder="New child value"><button id="add" class="secondary">Add child</button></div>
+        <button id="delete" class="danger">Delete element</button>
+      </div>
+      <div class="toolbar"><span id="pending">No pending changes</span><button id="apply" disabled>Apply changes</button></div>
+    </section>
+  </main>
+  <div id="message" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
